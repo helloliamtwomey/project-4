@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Health Questionnaire</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/Users/liamtwomey/Desktop/my_project/static/css/style.css') }}">
+    <script src="{{ url_for('static', filename='/Users/liamtwomey/Desktop/my_project/static/js/script.js') }}"></script>
+  </head>
+  <body>
+    <h1>Health Questionnaire</h1>
+    <form method="post" action="{{ url_for('result') }}">
+      <div class="question">
+        <label for="reason">Please describe the reason for your visit today and list the specific symptoms you are experiencing.</label><br>
+        <textarea id="reason" name="reason" rows="4" cols="50"></textarea>
+      </div>
+      <div class="question">
+        <label for="description">Please describe the symptoms you've been experiencing and how they've affected your daily life.</label><br>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea>
+      </div>
+      <div class="question">
+        <label for="duration">How long have you been experiencing these symptoms?</label><br>
+        <input type="text" id="duration" name="duration">
+      </div>
+      <div class="question">
+        <label for="severity">How severe are the symptoms? In terms of mild, moderate, or severe.</label><br>
+        <select id="severity" name="severity">
+          <option value="mild">Mild</option>
+          <option value="moderate">Moderate</option>
+          <option value="severe">Severe</option>
+        </select>
+      </div>
+      <div class="question">
+        <label for="other">Are there any other symptoms you are experiencing along with the main symptoms?</label><br>
+        <textarea id="other" name="other" rows="4" cols="50"></textarea>
+      </div>
+      <div class="question">
+        <label for="history">Do you have any past medical history or conditions that may be relevant to your symptoms?</label><br>
+        <textarea id="history" name="history" rows="4" cols="50"></textarea>
+      </div>
+      <div class="question">
+        <label for="expectations">What are your expectations for your appointment today?</label><br>
+        <textarea id="expectations" name="expectations" rows="4" cols="50"></textarea>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
